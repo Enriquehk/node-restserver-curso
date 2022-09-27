@@ -15,7 +15,10 @@ app.use(bodyParser.json())
 
 app.use( require('./routes/user.route'));
 
-mongoose.connect('mongodb://localhost:3000/cafe', () => {
+mongoose.connect('mongodb://localhost:27017/cafe', (err, res) => {
+
+  if ( err ) throw err; 
+
   console.log('Base de datos ONLINE');
 });
 
